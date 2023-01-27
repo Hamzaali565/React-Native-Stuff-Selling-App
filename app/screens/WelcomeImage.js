@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import AppButton from '../components/AppButton';
+import Screen from '../components/Screen';
 
 const WelcomeImage = () => {
     return (

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, StyleSheet } from "react-native";
 import Screen from "../components/Screen";
+import * as ImagePicker from "expo-image-picker";
+
 import * as Yup from "yup";
 import { AppForm, AppFormField, SubmitButton } from "../components/Forms";
+import { useGalleryAccess } from "../hooks/useGalleryAccess";
+import { useLayoutEffect } from "react/cjs/react.development";
+import { useLocation } from "../hooks/useLocation";
+import AppButton from "../components/AppButton";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -10,12 +16,25 @@ const validationSchema = Yup.object().shape({
 });
 
 const LoginScreen = () => {
+  const [images, setImages] = useState([]);
+  const galleryAccess = useGalleryAccess();
+  const location = useLocation();
+
+  const SubmitHandler = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if (!result.canceled) setImages(result.assets[0].uri);
+      // console.log(gImage);
+    } catch (error) {
+      console.log("Error ", error);
+    }
+  };
   return (
     <Screen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo.png")} />
       <AppForm
         initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(value) => console.log(galleryAccess, location)}
         validationSchema={validationSchema}
       >
         <AppFormField
@@ -37,6 +56,7 @@ const LoginScreen = () => {
           textContentType="password"
         />
         <SubmitButton title="Login" />
+        <AppButton onPress={SubmitHandler} />
       </AppForm>
     </Screen>
   );

@@ -16,27 +16,68 @@ import AccountScreen from './app/screens/AccountScreen';
 import ListingScreen from './app/screens/ListingScreen';
 import AppTextInput from './app/components/AppTextInput';
 import Screen from './app/components/Screen';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import AppPicker from './app/components/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import CategoryScreen from './app/screens/CategoryScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
+import Check from './app/screens/Check';
+import * as ImagePicker from 'expo-image-picker'
+import ImageComponent from './app/components/ImageComponent';
+import ImageInputList from './app/components/ImageInputList';
+
 
 export default function App() {
-
+  // const [gImages, setGImages] = useState([]);
+  // const resultPermision = async () => {
+  //   const resul = await ImagePicker.requestCameraPermissionsAsync();
+  //   if (!resul.granted) {
+  //     alert("you need to enable it to access library")
+  //   }
+  // }
+  // useEffect(() => {
+  //   resultPermision()
+  // }, [])
+  // const SubmitHandler = async () => {
+  //   try {
+  //     const result = await ImagePicker.launchImageLibraryAsync();
+  //     if (!result.canceled) setGImage(result.assets[0].uri)
+  //     // console.log(gImage);
+  //   } catch (error) {
+  //     console.log("Error ", error);
+  //   }
+  // }
+  // const handleAdd = uri => {
+  //   setGImages([...gImages, uri])
+  // }
+  // const handleDelete = uri => {
+  //   setGImages(gImages.filter(image => image !== uri))
+  // }
   return (
-    // <WelcomeImage />
-    // <AccountScreen />
-    // <ListeningDetails />
-    // <MessagesScreen />
-    // <ListingScreen />
-    // <ViewScreen />
     // <CategoryScreen />
-    // <LoginScreen />
-    <ListingEditScreen />
+    // <ListingEditScreen />
+    <LoginScreen />
+  )
 
-  );
+  //  <Screen>
+  {/* <ImageInputList
+      onAddImage={handleAdd}
+      onRemoveImage={handleDelete}
+      gimage={gImages} /> */}
+  // </Screen>;
+  // <WelcomeImage />
+  // <AccountScreen />
+  // <ListeningDetails />
+  // <MessagesScreen />
+  // <ListingScreen />
+  // <ViewScreen />
+  // <CategoryScreen />
+  // <LoginScreen />
+  // <ListingEditScreen />
+  // <Check />
+
+
 }
 // // https://drive.google.com/drive/folders/10SrizHKbt6Ss9IWw9xEUvKcHr2_R68X7
 // const styles = StyleSheet.create({
