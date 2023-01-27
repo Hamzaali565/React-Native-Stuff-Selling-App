@@ -80,6 +80,7 @@ export default function App() {
 
 }
 // // https://drive.google.com/drive/folders/10SrizHKbt6Ss9IWw9xEUvKcHr2_R68X7
+// https://drive.google.com/drive/folders/12XjIqpPNfZSsO47U4W_fcQz8yYZUNSpy part2
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
