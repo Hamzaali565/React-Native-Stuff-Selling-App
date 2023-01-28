@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@react-native-community/hooks": "^2.8.1",
+    "@react-navigation/bottom-tabs": "^6.5.3",
     "@react-navigation/native": "^6.1.2",
+    "@react-navigation/native-stack": "^6.9.8",
     "expo": "~47.0.12",
     "expo-constants": "^14.0.2",
     "expo-image-picker": "~14.0.2",

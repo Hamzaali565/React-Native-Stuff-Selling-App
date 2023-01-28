@@ -25,7 +25,7 @@ const Initialmessages = [
     image: require("../assets/chair.jpg"),
   },
 ];
-const MessagesScreen = () => {
+const MessagesScreen = ({ navigation }) => {
   const [messages, setMessages] = useState(Initialmessages);
   const [refresh, setRefresh] = useState(false);
   const handleDelete = (message) => {

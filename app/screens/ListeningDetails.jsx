@@ -3,13 +3,14 @@ import { Image, Text, View, StyleSheet } from "react-native";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 
-const ListeningDetails = () => {
+const ListeningDetails = ({ route }) => {
+  let listing = route.params;
   return (
     <View>
-      <Image style={styles.image} source={require("../assets/chair.jpg")} />
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailContainers}>
-        <Text style={styles.title}>Chair For Sale</Text>
-        <Text style={styles.price}>$100</Text>
+        <Text style={styles.title}>{listing.title}</Text>
+        <Text style={styles.price}>{listing.price}</Text>
         <View style={styles.listContainer}>
           <ListItem
             image={require("../assets/chair.jpg")}

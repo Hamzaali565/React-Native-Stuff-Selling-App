@@ -2,8 +2,9 @@ import React from 'react'
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import AppButton from '../components/AppButton';
 import Screen from '../components/Screen';
+import routes from '../navigator/routes';
 
-const WelcomeImage = () => {
+const WelcomeImage = ({ navigation }) => {
     return (
         <ImageBackground
             style={styles.background}
@@ -15,8 +16,8 @@ const WelcomeImage = () => {
                 <Text style={styles.tagline}>Sell What you Dont need</Text>
             </View>
             <View style={styles.buttonsContainer}>
-                <AppButton title="Login" />
-                <AppButton title="Register" color='secondary' />
+                <AppButton title="Login" onPress={() => navigation.navigate("Login")} />
+                <AppButton title="Register" color='secondary' onPress={() => navigation.navigate(routes.LOGIN)} />
             </View>
         </ImageBackground>
     )

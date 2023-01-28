@@ -9,13 +9,14 @@ import { useGalleryAccess } from "../hooks/useGalleryAccess";
 import { useLayoutEffect } from "react/cjs/react.development";
 import { useLocation } from "../hooks/useLocation";
 import AppButton from "../components/AppButton";
+import routes from "../navigator/routes";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
   password: Yup.string().required().min(4).label("Password"),
 });
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [images, setImages] = useState([]);
   const galleryAccess = useGalleryAccess();
   const location = useLocation();
@@ -55,8 +56,11 @@ const LoginScreen = () => {
           secureTextEntry
           textContentType="password"
         />
-        <SubmitButton title="Login" />
-        <AppButton onPress={SubmitHandler} />
+        <SubmitButton
+          title="Login"
+          onPress={() => navigation.navigate(routes.LOGIN)}
+        />
+        {/* <AppButton onPress={SubmitHandler} /> */}
       </AppForm>
     </Screen>
   );
