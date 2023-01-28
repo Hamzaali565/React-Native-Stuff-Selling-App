@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
+import ActivityIndicator from "../components/ActivityIndicator";
 import Card from "../components/Card";
 import Screen from "../components/Screen";
 import colors from "../config/colors";
@@ -22,6 +23,7 @@ const Listings = [
 const ListingScreen = ({ navigation }) => {
   return (
     <Screen style={styles.mainData}>
+      {/* <ActivityIndicator visible={true} /> */}
       <FlatList
         data={Listings}
         keyExtractor={(listing) => listing.id.toString()}

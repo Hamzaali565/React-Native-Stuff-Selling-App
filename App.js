@@ -106,6 +106,7 @@ export default function App() {
     <NavigationContainer theme={NavTheme}>
       {/* <AuthNavigator /> */}
       <AppNavigator />
+      {/* <Check /> */}
     </NavigationContainer>
     // <TabNavigator />
     // < AccountScreen />
